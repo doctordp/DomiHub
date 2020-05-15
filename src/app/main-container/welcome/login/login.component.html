@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row text-center login-page">
+    <div class="col-md-12 login-form">
+      <form [formGroup]="loggingForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-md-12 login-form-header">
+            <p class="login-form-font-header">Domi<span>Hub</span></p>
+            <p></p>
+          </div>
+        </div>
+        <div formGroupName="userData">
+          <div class="row">
+            <div class="col-md-12 login-from-row">
+              <input
+                formControlName="username"
+                name="usuario"
+                type="text"
+                placeholder="User"
+                required
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 login-from-row">
+              <input
+                formControlName="password"
+                name="password"
+                type="password"
+                placeholder="Password"
+                required
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 login-from-row">
+              <button type="submit" class="btn btn-info">Entrar</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

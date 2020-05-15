@@ -1,0 +1,16 @@
+<h1 style="color: white;">Welcome to DomiHub</h1>
+<app-login *ngIf="wantTologin"></app-login>
+<button
+  class="btn btn-success"
+  (click)="wantTologin = true"
+  style="margin-right: 5px; margin-bottom: 5px;"
+>
+  Click Here If you are admin
+</button>
+<button
+  class="btn btn-success"
+  style="margin-right: 5px; margin-bottom: 5px;"
+  (click)="th()"
+>
+  Sign in as guest
+</button>
