@@ -24,6 +24,12 @@ export class AuthInterceptorService implements HttpInterceptor {
       return next.handle(authReq);
     }
 
-    return next.handle(req);
+    const authReq = req.clone({
+      setHeaders: {
+        'Content-Type': 'application/json;charset=UTF-8',
+      },
+    });
+
+    return next.handle(authReq);
   }
 }
