@@ -23,7 +23,7 @@ export class LoggingService {
       )
       .toPromise()
       .then((data: string) => {
-        if (data === 'false') {
+        if (JSON.stringify(data) === 'false') {
           this.logged = false;
           console.log('not registered, sorry');
           return;
