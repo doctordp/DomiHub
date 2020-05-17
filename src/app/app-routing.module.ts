@@ -4,8 +4,8 @@ import { MainContainerComponent } from './main-container/main-container.componen
 import { WelcomeComponent } from './main-container/welcome/welcome.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/welcome' },
-  { path: 'welcome', component: WelcomeComponent },
+  { path: '/', redirectTo: '/welcome', pathMatch: 'full' },
+  { path: '/welcome', component: WelcomeComponent },
 ];
 
 @NgModule({
