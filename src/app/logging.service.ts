@@ -5,15 +5,16 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class LoggingService {
-  public logged: boolean = false;
-  public loggedUser: string = 'default';
+  public logged = false;
+  public loggedUser = 'default';
+  private currentEndpoint = 'https://domi.yasmany.dev';
 
   constructor(private http: HttpClient) {}
 
   public amIRegistered2(username: string, password: string) {
     this.http
       .post(
-        'http://35.210.178.12:3004/loggin',
+        `${this.currentEndpoint}/login`,
         {
           username: username,
           password: password,
@@ -37,7 +38,7 @@ export class LoggingService {
     console.log(localStorage);
     if (localStorage.token) {
       this.http
-        .get('http://35.210.178.12:3004/checkToken?token=' + localStorage.token)
+        .get(`${this.currentEndpoint}/checkToken?token=` + localStorage.token)
         .toPromise()
         .then((data: any) => {
           console.log(data);

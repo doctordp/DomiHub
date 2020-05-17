@@ -25,13 +25,5 @@ export class WelcomeComponent implements OnInit, DoCheck {
     this.loggedUser = this.loggingService.loggedUser;
   }
 
-  th() {
-    console.log(localStorage.token);
-    this.http
-      .get('http://35.210.178.12:3004/')
-      .toPromise()
-      .then((data) => {
-        console.log(data);
-      });
-  }
+  th() {}
 }
