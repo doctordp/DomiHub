@@ -19,11 +19,11 @@ export class AuthInterceptorService implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
     console.log('INTERCEPTOR');
 
-    var authReq;
     if (localStorage.token) {
-      authReq = authReq.clone({ setHeaders: { token: localStorage.token } });
+      const authReq = req.clone({ setHeaders: { token: localStorage.token } });
+      return next.handle(authReq);
     }
 
-    return next.handle(authReq);
+    return next.handle(req);
   }
 }
