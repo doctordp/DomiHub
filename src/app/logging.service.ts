@@ -26,7 +26,8 @@ export class LoggingService {
         if (data === 'false') {
           this.logged = false;
           console.log('not registered, sorry');
-        } else if (data === 'true') {
+          return;
+        } else {
           this.logged = true;
           console.log('logged correctly');
           localStorage.setItem('token', data);
