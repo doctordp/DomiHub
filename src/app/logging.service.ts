@@ -14,7 +14,7 @@ export class LoggingService {
   public amIRegistered2(username: string, password: string) {
     this.http
       .post(
-        `${this.currentEndpoint}/login`,
+        `${this.currentEndpoint}/loggin`,
         {
           username: username,
           password: password,
