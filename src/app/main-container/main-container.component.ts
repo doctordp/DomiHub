@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoggingService } from '../logging.service';
 
 @Component({
   selector: 'app-main-container',
@@ -6,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-container.component.css'],
 })
 export class MainContainerComponent implements OnInit {
-  constructor() {}
+  constructor(private logginService: LoggingService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.logginService.amILoggedIn();
+  }
 }

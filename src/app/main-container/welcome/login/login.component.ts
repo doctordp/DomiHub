@@ -10,7 +10,7 @@ import { LoggingService } from 'src/app/logging.service';
 export class LoginComponent implements OnInit {
   public loggingForm: FormGroup;
 
-  constructor(private logging: LoggingService) {}
+  constructor(private loggingService: LoggingService) {}
 
   ngOnInit(): void {
     this.loggingForm = new FormGroup({
@@ -23,14 +23,10 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     console.log('Submited!');
-    console.log(this.loggingForm);
-    console.log(this.loggingForm.value.userData.password);
-    this.logging.amIRegistered(
+    this.loggingService.amIRegistered2(
       this.loggingForm.value.userData.username,
       this.loggingForm.value.userData.password
-    ).then( data =>{
-      console.log(data);
-    }
-    )
+    );
+    this.loggingService.loggedUser = this.loggingForm.value.userData.username;
   }
 }
