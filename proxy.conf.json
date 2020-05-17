@@ -1,5 +1,7 @@
 {
-  "target": "https://domi.yasmany.dev",
-  "secure": false,
-  "loglevel": "debug"
+  "/": {
+    "target": "https://domi.yasmany.dev",
+    "secure": false,
+    "loglevel": "debug"
+  }
 }
