@@ -27,6 +27,9 @@ export class LoginComponent implements OnInit {
       this.loggingForm.value.userData.username,
       this.loggingForm.value.userData.password
     );
-    this.loggingService.loggedUser = this.loggingForm.value.userData.username;
+    localStorage.setItem(
+      'loggedUser',
+      this.loggingForm.value.userData.username
+    );
   }
 }

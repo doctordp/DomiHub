@@ -22,7 +22,7 @@ export class WelcomeComponent implements OnInit, DoCheck {
 
   ngDoCheck() {
     this.logged = this.loggingService.logged;
-    this.loggedUser = this.loggingService.loggedUser;
+    this.loggedUser = localStorage.loggedUser;
   }
 
   th() {}
