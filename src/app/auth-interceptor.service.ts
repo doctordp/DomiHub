@@ -26,7 +26,7 @@ export class AuthInterceptorService implements HttpInterceptor {
 
     const authReq = req.clone({
       setHeaders: {
-        'Content-Type': 'application/json;charset=UTF-8',
+        miHeader: 'miValor',
       },
     });
 
