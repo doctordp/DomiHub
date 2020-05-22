@@ -11,6 +11,8 @@ export class AdminComponent implements OnInit {
   ngOnInit(): void {}
 
   public goDomiNotes() {
-    window.location.href = `https://master.d14g6sukj7cmzo.amplifyapp.com/logged?token=${localStorage.token}`;
+    window.location.href = `https://dominnotes.dev/?token=${localStorage.token}`;
+
+    //window.location.href = `http://localhost:4200/?token=${localStorage.token}`;
   }
 }

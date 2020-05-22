@@ -12,5 +12,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.loggingService.amILoggedIn();
+    localStorage.removeItem('token');
+    console.log(localStorage);
   }
 }
